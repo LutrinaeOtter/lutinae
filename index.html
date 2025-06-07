@@ -1,68 +1,128 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trường THPT Trần Văn Hoài</title>
-    <link rel="stylesheet" href="thpt.css">
+  <meta charset="UTF-8">
+  <title>bru</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    #start-btn {
+      padding: 16px 32px;
+      font-size: 20px;
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      z-index: 10;
+    }
+
+    #start-btn:hover {
+      background-color: #ff3385;
+    }
+
+    h1 {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      font-size: 48px;
+      color: #ff3399;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease-in-out;
+      display: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d88;
+      transform: rotate(45deg);
+      animation: floatUp 5s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d88;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: rotate(45deg) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(45deg) translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="img/logo.png" alt="Logo trường" style="height: 100px; float: left; margin-right: 20px;">
-        <h1>Trường THPT </h1>
-        <H2> HỌC ĐỂ BIẾT - HỌC ĐỂ LÀM - HỌC ĐỂ KHẲNG ĐỊNH MÌNH - HỌC ĐỂ CÙNG CHUNG SỐNG</H2>
-        <nav>
-            <ul>
-                <a href="#gioithieu">Giới thiệu</a>
-                <a href="#tuyensinh">Tuyển sinh</a>
-                <a href="#tintuc">Tin tức</a>
-                <a href="#lienhe">Liên hệ</a>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="gioithieu">
-        <h1>Giới thiệu</h1>
-        <p>Trường THPT Trần Văn Hoài là một ngôi trường có dày lịch sử, có sứ mệnh giáo dục và đào tạo sinh sinh trở thành những công dân có tri thức, đạo đức và kỹ năng để đóng góp cho xã hội. Nhà trường chú ý đến việc nâng cao chất lượng giảng dạy, cải thiện cơ sở vật chất và áp dụng các phương pháp giáo dục tiên tiến
 
-Với đội ngũ giáo viên tận tâm, giàu kinh nghiệm cùng chương trình học đa dạng, THPT Trần Văn Hoài cam kết mang đến môi trường học tập lý tưởng cho học sinh. Trường còn tổ chức nhiều hoạt động ngoại khóa, giúp học sinh phát triển toàn diện về trí tuệ và kỹ năng mềm.</p>
-    </section>
-    
-    <section id="tuyensinh">
-        <h1>Tuyển sinh</h1>
-        <p>Trường THPT Trần Văn Hoài thông báo kế hoạch tuyển sinh năm học mới với các nội dung như sau:</p>
+  <button id="start-btn" onclick="startLove()">Bấm vào đi người đẹp</button>
+  <h1 id="love-text">love you</h1>
 
-<h3>1. Đối tượng tuyển sinh</h3>
-<p>Học sinh đã tốt nghiệp THCS trong năm học hiện tại hoặc các năm trước.</p>
-<p>Học sinh có hạnh kiểm tốt, đủ điều kiện xét tuyển theo quy định.</p>
-<h3>2. Chỉ tiêu tuyển sinh</h3>
-<p>Tổng số lượng tuyển sinh: … học sinh</p>
-<p>Các lớp chuyên và không chuyên theo định hướng của nhà trường.</p>
-<h3>3. Phương thức tuyển sinh</h3>
-<p>Xét tuyển: Dựa trên kết quả kỳ thi tuyển sinh lớp 10 do Sở Giáo dục & Đào tạo tổ chức.
-Điểm xét tuyển: Tổng điểm các môn thi theo quy định, có tính điểm ưu tiên (nếu có).</p>
-<h3>4. Hồ sơ đăng ký dự tuyển</h3>
-<p>Đơn đăng ký dự tuyển theo mẫu.</p>
-<p>Học bạ THCS (bản sao công chứng).</p>
-<p>Giấy khai sinh (bản sao công chứng).</p>
-<p>Giấy chứng nhận tốt nghiệp THCS tạm thời (nếu có).</p>
-<p>Giấy chứng nhận ưu tiên (nếu có).</p>
-    </section>
-    
-    <section id="tintuc">
-        <h1Tin tức</h1>
-        <p>Cập nhật các tin tức mới nhất...</p>
-    </section>
-    
-    <section id="lienhe">
-        <h1>Liên hệ</h1>
-        <p>Địa chỉ: ...</p>
-        <p>Email: contact@tranvanhoai.edu.vn</p>
-        <p>Điện thoại: 0123-456-789</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Trường THPT Trần Văn Hoài. All rights reserved.</p>
-    </footer>
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    function startLove() {
+      document.getElementById("start-btn").style.display = "none";
+      document.getElementById("love-text").style.display = "block";
+
+      // Bắt đầu tạo trái tim bay
+      setInterval(createHeart, 200);
+    }
+  </script>
+
 </body>
 </html>
