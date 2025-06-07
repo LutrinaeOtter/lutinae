@@ -33,17 +33,17 @@
       background-color: #ff3385;
     }
 
-    img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    animation: fadeIn 0.5s ease-in-out;
-    display: none; /* hiển thị ảnh */
-    z-index: 10; /* đảm bảo ảnh nằm trên các phần tử khác nếu cần */
+    h1 {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      font-size: 48px;
+      color: #ff3399;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease-in-out;
+      display: none;
     }
-
 
     .heart {
       position: absolute;
@@ -100,7 +100,8 @@
 <body>
 
   <button id="start-btn" onclick="startLove()">Bấm vào đi người đẹp</button>
-  <img src="img/logo.JPG" id="love-text">
+  <h1 id="love-text">Có gì đâu mà coi=))</h1>
+
   <script>
     function createHeart() {
       const heart = document.createElement('div');
