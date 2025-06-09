@@ -2,18 +2,21 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>bru</title>
+  <title>Kim Ngân Dễ Thương</title>
   <style>
     body {
       margin: 0;
       overflow: hidden;
-      background-color: #fff0f5;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       flex-direction: column;
+      background-image: url('https://cellphones.com.vn/sforum/wp-content/uploads/2022/06/7.jpg'); /* Ảnh nền ban đầu */
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
     }
 
     #start-btn {
@@ -95,12 +98,24 @@
         transform: scale(1);
       }
     }
+
+    #cat {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 120px;
+      z-index: 5;
+      display: none;
+    }
   </style>
 </head>
 <body>
 
   <button id="start-btn" onclick="startLove()">Bấm vào đi người đẹp</button>
-  <h1 id="love-text">Có gì đâu mà coi=))</h1>
+  <h1 id="love-text">chúc người đẹp một ngày tốt lành💖</h1>
+
+  <!-- Mèo cắn hoa -->
+  <img id="cat" src="https://i.pinimg.com/originals/02/f7/dd/02f7dde8aac486392838b14451681846.gif" alt="Con mèo cắn hoa">
 
   <script>
     function createHeart() {
@@ -109,17 +124,17 @@
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = (3 + Math.random() * 2) + "s";
       document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
+      setTimeout(() => heart.remove(), 5000);
     }
 
     function startLove() {
       document.getElementById("start-btn").style.display = "none";
       document.getElementById("love-text").style.display = "block";
+      document.getElementById("cat").style.display = "block";
 
-      // Bắt đầu tạo trái tim bay
+      // Đổi ảnh nền khi bấm
+      document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/41/c3/41/41c3411c379878f87a1fbe9c557c4ef8.gif')";
+
       setInterval(createHeart, 200);
     }
   </script>
